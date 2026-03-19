@@ -11,6 +11,13 @@ let imgContainer = document.querySelector('section');
 let state = new AppState();
 state.loadItems();
 
+//=======================================
+// temp addition to check reset state
+
+console.log(state.allProducts);
+
+//=======================================
+
 function generateRandomProduct() {
   return Math.floor(Math.random() * state.allProducts.length);
 }

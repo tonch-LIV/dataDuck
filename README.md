@@ -163,3 +163,10 @@ Once the application is complete:
 - Chart.js
 - CSS
 - Git / GitHub
+
+===============================================
+Changelog
+
+- 03.19.26
+  - Implmented `saveToLocalStorage` through `AppState.prototype.saveToLocalStorage = function ()` in `app.js`.
+  - remedied data being reset upon refresh by adding `if... else` statement that states to use data if any is saved in localStorage, and if none exists, to create new product data.
