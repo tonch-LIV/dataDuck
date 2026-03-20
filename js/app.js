@@ -28,13 +28,28 @@ AppState.prototype.saveToLocalStorage = function () {
 AppState.prototype.loadItems = function () {
   // TODO: Update this instance method to retrieve data from local storage instead of creating new Products on each page load
 
-  let storedProducts = localStorage.getItem('products')
+  // gets data from localStorage; will return 'null' on first visit
+  let retrievedProducts = localStorage.getItem('products');
 
-  // use saved data, if any
-  if (storedProducts) {
-    let parsedProducts = JSON.parse(storedProducts);
-    this.allProducts = parsedProducts;
-  } else { // if not, create new products / data
+  if (retrievedProducts) { // save data exists
+    let parsedProducts = JSON.parse(retrievedProducts); // from strings to usable objects (plain), not Product
+
+    // rebuild Product instances
+    this.allProducts = [];
+
+    for (let i = 0; i < parsedProducts.length; i++) {
+      let productData = parsedProducts[i];
+
+      let rebuiltProduct = new Product(productData.name);
+      // fix for png file extension
+      rebuiltProduct.source = productData.source;
+      rebuiltProduct.timesClicked = productData.timesClicked;
+      rebuiltProduct.timesShown = productData.timesShown;
+
+      this.allProducts.push(rebuiltProduct);
+    }
+
+  } else { // first time visit
     this.instantiateProducts();
   }
 };

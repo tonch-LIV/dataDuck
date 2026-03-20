@@ -1,1 +1,61 @@
 /* TODO: Make it awesome */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+#imgContainer {
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  gap: 130px;
+  align-items: center;
+  margin: 40px 90px;
+
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+}
+
+img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+#chart-section {
+  width: 80%;
+  margin: 2rem auto;
+}

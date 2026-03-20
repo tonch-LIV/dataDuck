@@ -170,3 +170,12 @@ Changelog
 - 03.19.26
   - Implmented `saveToLocalStorage` through `AppState.prototype.saveToLocalStorage = function ()` in `app.js`.
   - remedied data being reset upon refresh by adding `if... else` statement that states to use data if any is saved in localStorage, and if none exists, to create new product data.
+  - began implementation of chart.
+    - chart.html is able to access stored data; top part of `renderChart`.
+    - created arrays for `productNames`, `votes`, and `views` so chart can access.
+    - defined data object.
+    - built config.
+    - render chart; success.
+  - fixed issue with broken `sweep.png` not displaying; had to try on both edge and firefox...
+  - localStorage not persisting (possibly from opeing files directly, rather than live; indeed it was...).
+  - put the finishing style touches.
